@@ -103,8 +103,8 @@ export default function App() {
         }}
       />
 
-      {/* Main Content Viewport */}
-      <main className="flex-1 min-w-0 p-4 sm:p-8 lg:p-10 pb-20 md:pb-10 max-w-7xl mx-auto w-full">
+      {/* Main Content Viewport - Expansive responsive layout across all screens */}
+      <main className="flex-1 min-w-0 p-5 sm:p-7 lg:p-9 pb-20 md:pb-10 w-full">
         {activeTab === 'dashboard' && (
           <Dashboard
             reports={reports}

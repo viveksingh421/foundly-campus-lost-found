@@ -74,7 +74,7 @@ export const MobileNavbar = ({ activeTab, onSelectTab, onResetData, counts = {} 
               </button>
             </div>
 
-            <div className="space-y-1">
+            <div className="space-y-1.5">
               {navItems.map((item) => {
                 const Icon = item.icon;
                 const isActive = activeTab === item.id;
@@ -82,18 +82,18 @@ export const MobileNavbar = ({ activeTab, onSelectTab, onResetData, counts = {} 
                   <button
                     key={item.id}
                     onClick={() => handleSelect(item.id)}
-                    className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all ${
+                    className={`w-full flex items-center justify-between px-4 py-3 rounded-xl text-base font-bold transition-all ${
                       isActive
-                        ? 'bg-lime text-midnight-950 font-bold'
-                        : 'text-midnight-300 hover:bg-midnight-900 hover:text-white'
+                        ? 'bg-lime text-midnight-950 font-black'
+                        : 'text-white hover:bg-midnight-850'
                     }`}
                   >
                     <div className="flex items-center gap-3">
-                      <Icon className="w-4 h-4" />
-                      <span>{item.label}</span>
+                      <Icon className="w-5 h-5 text-white" />
+                      <span className="text-white">{item.label}</span>
                     </div>
                     {item.count !== undefined && item.count !== null && (
-                      <span className="text-xs px-2 py-0.5 rounded-full bg-midnight-800 text-midnight-300">
+                      <span className="text-xs px-2.5 py-0.5 rounded-full bg-midnight-800 text-white font-mono font-bold">
                         {item.count}
                       </span>
                     )}

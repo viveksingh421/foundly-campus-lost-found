@@ -20,7 +20,7 @@ The application features a startup-grade UI designed with a **Midnight Navy (`#1
 
 ## 💻 Display & Responsive Optimization
 
-Foundly is engineered to look visually commanding across both compact and wide displays, with specific calibration for modern **13.4-inch (M4 MacBook) displays and high-DPI screens**:
+Foundly is engineered to look visually commanding and crystal clear across **all screens and device viewports** (from smartphones and laptops to high-resolution desktop monitors):
 - **+5px Root Font Scaling**: Base `html { font-size: 21px; }` scaling ensures large, legible typography, cards, and interactive controls without eye strain.
 - **Expansive Viewport Layout**: Replaced rigid narrow boundaries with responsive full-width containers (`w-full`), eliminating empty side gutters.
 - **High-Contrast Pure White Navigation (`#FFFFFF`)**: Replaced subdued grey text with crisp white typography and vivid electric lime indicators for effortless navigation.

@@ -21,22 +21,22 @@ export const Sidebar = ({ activeTab, onSelectTab, onResetData, counts = {} }) =>
   ];
 
   return (
-    <aside className="w-64 bg-midnight-950 border-r border-midnight-800 flex flex-col justify-between h-screen sticky top-0 shrink-0 select-none">
+    <aside className="w-80 bg-midnight-950 border-r border-midnight-800 flex flex-col justify-between h-screen sticky top-0 shrink-0 select-none">
       {/* Brand Header */}
       <div>
         <div className="p-6 border-b border-midnight-850">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-lime flex items-center justify-center text-midnight-950 font-black text-xl shadow-lime-glow">
+          <div className="flex items-center gap-3.5">
+            <div className="w-12 h-12 rounded-2xl bg-lime flex items-center justify-center text-midnight-950 font-black text-2xl shadow-lime-glow shrink-0">
               F
             </div>
             <div>
-              <div className="flex items-center gap-1.5">
-                <span className="font-bold text-lg text-white tracking-tight">FOUNDLY</span>
-                <span className="text-[10px] font-mono uppercase px-1.5 py-0.5 rounded bg-lime-dim text-lime border border-lime-border font-semibold">
+              <div className="flex items-center gap-2">
+                <span className="font-extrabold text-2xl text-white tracking-tight">FOUNDLY</span>
+                <span className="text-xs font-mono uppercase px-2 py-0.5 rounded-md bg-lime-dim text-lime border border-lime-border font-bold">
                   Campus
                 </span>
               </div>
-              <p className="text-xs text-midnight-400 font-medium leading-tight">
+              <p className="text-sm text-midnight-300 font-medium leading-tight mt-0.5">
                 Lost something? Bring it back.
               </p>
             </div>
@@ -44,8 +44,8 @@ export const Sidebar = ({ activeTab, onSelectTab, onResetData, counts = {} }) =>
         </div>
 
         {/* Navigation List */}
-        <nav className="p-4 space-y-1.5">
-          <div className="px-3 pb-2 text-[11px] font-mono uppercase tracking-wider text-midnight-500 font-semibold">
+        <nav className="p-4 space-y-2">
+          <div className="px-3 pb-1 text-xs font-mono uppercase tracking-wider text-lime font-bold">
             Platform Menu
           </div>
           {navItems.map((item) => {
@@ -55,33 +55,33 @@ export const Sidebar = ({ activeTab, onSelectTab, onResetData, counts = {} }) =>
               <button
                 key={item.id}
                 onClick={() => onSelectTab(item.id)}
-                className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-sm font-medium transition-all group ${
+                className={`w-full flex items-center justify-between px-4 py-3 rounded-2xl text-base font-bold transition-all group ${
                   isActive
-                    ? 'bg-lime text-midnight-950 font-bold shadow-subtle'
+                    ? 'bg-lime text-midnight-950 font-black shadow-subtle'
                     : item.isHighlight
-                    ? 'text-white bg-midnight-850/80 hover:bg-midnight-800 border border-midnight-700/60'
-                    : 'text-midnight-400 hover:text-white hover:bg-midnight-900'
+                    ? 'text-white bg-midnight-800 hover:bg-midnight-750 border border-lime/40 shadow-sm'
+                    : 'text-white hover:text-white hover:bg-midnight-850'
                 }`}
               >
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-3.5">
                   <Icon
-                    className={`w-4 h-4 transition-colors ${
+                    className={`w-5 h-5 transition-colors ${
                       isActive
                         ? 'text-midnight-950 stroke-[2.5]'
                         : item.isHighlight
-                        ? 'text-lime'
-                        : 'text-midnight-400 group-hover:text-white'
+                        ? 'text-lime stroke-[2.5]'
+                        : 'text-white group-hover:text-lime'
                     }`}
                   />
-                  <span>{item.label}</span>
+                  <span className="text-white">{item.label}</span>
                 </div>
 
                 {item.count !== undefined && item.count !== null && (
                   <span
-                    className={`text-xs px-2 py-0.5 rounded-full font-mono font-semibold ${
+                    className={`text-xs px-2.5 py-0.5 rounded-full font-mono font-bold ${
                       isActive
-                        ? 'bg-midnight-950/20 text-midnight-950'
-                        : 'bg-midnight-800 text-midnight-400 group-hover:text-white'
+                        ? 'bg-midnight-950 text-lime font-black'
+                        : 'bg-midnight-800 text-white group-hover:bg-midnight-700 border border-midnight-700'
                     }`}
                   >
                     {item.count}
@@ -94,17 +94,17 @@ export const Sidebar = ({ activeTab, onSelectTab, onResetData, counts = {} }) =>
       </div>
 
       {/* Footer Info & Reset Demo Data */}
-      <div className="p-4 border-t border-midnight-850 space-y-3">
+      <div className="p-5 border-t border-midnight-850 space-y-3">
         {/* Campus Status Card */}
-        <div className="p-3 rounded-xl bg-midnight-900 border border-midnight-800 text-xs">
-          <div className="flex items-center justify-between text-midnight-300 font-medium mb-1">
-            <span className="flex items-center gap-1.5 text-lime">
-              <span className="w-2 h-2 rounded-full bg-lime animate-ping" />
+        <div className="p-3.5 rounded-2xl bg-midnight-900 border border-midnight-800 text-sm">
+          <div className="flex items-center justify-between text-white font-bold mb-1">
+            <span className="flex items-center gap-2 text-lime font-bold">
+              <span className="w-2.5 h-2.5 rounded-full bg-lime animate-ping" />
               Live Campus Desk
             </span>
-            <span className="text-midnight-400 text-[11px]">PS 02</span>
+            <span className="text-white text-xs font-mono">PS 02</span>
           </div>
-          <p className="text-midnight-400 text-[11px] leading-relaxed">
+          <p className="text-white/90 text-xs leading-relaxed font-medium">
             Explainable AI matching active with local browser state.
           </p>
         </div>
@@ -112,10 +112,10 @@ export const Sidebar = ({ activeTab, onSelectTab, onResetData, counts = {} }) =>
         {/* Reset Demo Data Button */}
         <button
           onClick={onResetData}
-          className="w-full flex items-center justify-center gap-2 px-3 py-2 text-xs font-medium text-midnight-400 hover:text-rose-400 hover:bg-rose-500/10 rounded-lg transition-colors border border-transparent hover:border-rose-500/20"
+          className="w-full flex items-center justify-center gap-2 px-3 py-2.5 text-xs font-bold text-white hover:text-rose-300 hover:bg-rose-500/15 rounded-xl transition-colors border border-midnight-800 hover:border-rose-500/30"
           title="Reset sample reports and claims to factory state"
         >
-          <RotateCcw className="w-3.5 h-3.5" />
+          <RotateCcw className="w-4 h-4 text-white" />
           <span>Reset Sample Data</span>
         </button>
       </div>

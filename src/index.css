@@ -3,6 +3,12 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    font-size: 21px; /* +5px scaling from standard 16px for enhanced readability across all screens */
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
   body {
     @apply bg-warm-100 text-midnight-900 font-sans antialiased selection:bg-lime selection:text-midnight-950;
     min-height: 100vh;
