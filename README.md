@@ -12,21 +12,32 @@
 
 ## 🎯 Project Overview
 
-**FOUNDLY** is a modern, responsive, privacy-conscious campus lost-and-found platform. It replaces chaotic bulletin boards and group chat noise with a structured, explainable matching engine that unites students who lost personal property with campus custody desks (libraries, dining halls, security offices, and gym facilities).
+**FOUNDLY** is a modern, responsive, privacy-conscious campus lost-and-found platform. It replaces chaotic bulletin boards, physical lost-and-found bins, and noisy social media threads with an **explainable matching engine** that connects students who lost personal property with campus custody desks (libraries, dining halls, security offices, recreation centers, and academic lecture halls).
 
-The application features a startup-grade UI designed with a **Midnight Navy (`#111827`)**, **Electric Lime (`#C7F36B`)**, and **Warm White (`#F8FAF5`)** palette, crisp typography (Inter), and subtle card borders.
+The application features a startup-grade UI designed with a **Midnight Navy (`#111827`)**, **Electric Lime (`#C7F36B`)**, and **Warm White (`#F8FAF5`)** color system, crisp typography (Inter), high-contrast navigation, and zero dead controls.
 
 ---
 
-## 🌟 Key Features
+## 💻 Display & Responsive Optimization
+
+Foundly is engineered to look visually commanding across both compact and wide displays, with specific calibration for modern **13.4-inch (M4 MacBook) displays and high-DPI screens**:
+- **+5px Root Font Scaling**: Base `html { font-size: 21px; }` scaling ensures large, legible typography, cards, and interactive controls without eye strain.
+- **Expansive Viewport Layout**: Replaced rigid narrow boundaries with responsive full-width containers (`w-full`), eliminating empty side gutters.
+- **High-Contrast Pure White Navigation (`#FFFFFF`)**: Replaced subdued grey text with crisp white typography and vivid electric lime indicators for effortless navigation.
+- **Adaptive Mobile Layout**: Automatic switch to bottom action bars and slide-out navigation on smaller viewports.
+
+---
+
+## 🌟 Core Features & Modules
 
 ### 1. 📊 Real-Time Dynamic Dashboard
-- **Dynamic KPI Metrics**: Open reports, candidate match pairs, pending claims, and reunited items derived directly from active application state.
+- **Dynamic KPI Metrics**: Open reports, candidate match pairs, pending claims, and reunited items derived directly from active application state (no hardcoded changing numbers).
 - **Top Match Suggestions**: Displays high-confidence matches detected by the explainable rules engine with instant inspection triggers.
 - **Recent Campus Activity**: Quick overview of recent submissions across campus sectors.
+- **Immediate Action Triggers**: Instant buttons to file a new report or explore the campus registry.
 
 ### 2. 🔍 Explore Registry & Faceted Search
-- **Live Search**: Instant keyword search across title, description, color, campus facility, and report ID.
+- **Live Search**: Instant keyword search across item title, description, color, campus facility, and report ID.
 - **Type Filtering**: Instant toggle between **All Items**, **Lost Only**, and **Found Only**.
 - **Faceted Filters**: Category selection, campus location selector, and sort ordering (Newest, Oldest, A–Z).
 - **Empty States**: Informative empty states with 1-click filter reset.
@@ -69,14 +80,14 @@ foundly-campus-lost-found/
 ├── src/
 │   ├── main.jsx                 # React root renderer
 │   ├── App.jsx                  # Main application state, routing & modal coordinator
-│   ├── index.css                # Base Tailwind layer & custom scrollbars
+│   ├── index.css                # Base Tailwind layer & +5px root font scaling
 │   ├── data/
 │   │   └── sampleData.js        # 11 Believable campus reports & 2 compatible demo pairs
 │   ├── utils/
 │   │   ├── matchingEngine.js    # 5-factor explainable relevance scoring engine
 │   │   └── storage.js           # LocalStorage persistence & factory reset helpers
 │   ├── components/
-│   │   ├── Sidebar.jsx          # Desktop navigation with live record badges
+│   │   ├── Sidebar.jsx          # Desktop navigation with high-contrast white typography
 │   │   ├── MobileNavbar.jsx     # Responsive mobile header and bottom tab bar
 │   │   ├── ItemCard.jsx         # Reusable card with status badges & match tags
 │   │   ├── ItemDetailModal.jsx  # Detailed item modal & candidate matches list
