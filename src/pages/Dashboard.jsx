@@ -54,18 +54,23 @@ export const Dashboard = ({
         <div className="absolute top-0 right-0 w-96 h-96 bg-lime/10 rounded-full blur-3xl pointer-events-none" />
         
         <div className="relative z-10 max-w-2xl space-y-4">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-lime-dim border border-lime-border text-lime text-xs font-mono uppercase font-bold">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-lime-dim border border-lime-border text-lime text-xs font-mono uppercase font-bold">
             <span className="w-2 h-2 rounded-full bg-lime animate-pulse" />
-            Active Campus Protocol
+            {(() => {
+              const hour = new Date().getHours();
+              if (hour < 12) return 'Good Morning, Campus 👋';
+              if (hour < 17) return 'Good Afternoon, Campus 👋';
+              return 'Good Evening, Campus 👋';
+            })()}
           </div>
 
           <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-white leading-tight">
             Lost something on campus? <br />
-            <span className="text-lime">Let's bring it back.</span>
+            <span className="text-lime">We're here to help you get it back.</span>
           </h1>
 
           <p className="text-sm sm:text-base text-midnight-300 leading-relaxed">
-            Foundly matches lost student items with campus custody desks using transparent, explainable metadata analysis and private verification claims.
+            From misplaced backpacks and water bottles to dorm keys and calculators — Foundly connects students with front desks across campus using smart, transparent matching.
           </p>
 
           <div className="flex items-center gap-3 pt-2 flex-wrap">

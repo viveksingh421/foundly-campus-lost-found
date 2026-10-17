@@ -100,12 +100,12 @@ export const Sidebar = ({ activeTab, onSelectTab, onResetData, counts = {} }) =>
           <div className="flex items-center justify-between text-white font-bold mb-1">
             <span className="flex items-center gap-2 text-lime font-bold">
               <span className="w-2.5 h-2.5 rounded-full bg-lime animate-ping" />
-              Live Campus Desk
+              Campus Help Desk Online
             </span>
-            <span className="text-white text-xs font-mono">PS 02</span>
+            <span className="text-lime text-xs font-mono font-bold">24/7</span>
           </div>
           <p className="text-white/90 text-xs leading-relaxed font-medium">
-            Explainable AI matching active with local browser state.
+            Helping students & staff reunite with lost belongings every day.
           </p>
         </div>
 
